@@ -1,0 +1,1843 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>胡毅豪 · 个人简历</title>
+    <style>
+        /* ============ 基础变量与重置 ============ */
+        :root {
+            --primary: #002FA7;
+            --primary-light: #1E5AFF;
+            --primary-glow: rgba(0, 47, 167, 0.35);
+            --bg: #FFFFFF;
+            --bg-secondary: #F8F9FC;
+            --text: #1A1A2E;
+            --text-secondary: #555570;
+            --text-muted: #8888A0;
+            --border: #E8E8F0;
+            --card-bg: #FFFFFF;
+            --card-shadow: 0 2px 12px rgba(0, 47, 167, 0.06);
+            --card-shadow-hover: 0 8px 28px rgba(0, 47, 167, 0.12);
+            --nav-bg: rgba(255, 255, 255, 0.82);
+            --nav-border: rgba(0, 47, 167, 0.08);
+            --timeline-line: #D0D5E8;
+            --badge-bg: rgba(0, 47, 167, 0.08);
+            --badge-text: #002FA7;
+            --input-bg: #F5F6FB;
+            --code-bg: #F4F6FD;
+            --scrollbar-thumb: #C0C6E0;
+            --tab-inactive: #F0F1F8;
+            --tab-active: #002FA7;
+            --tab-text-inactive: #555570;
+            --tab-text-active: #FFFFFF;
+            --progress-bg: #E8EAF5;
+            --progress-fill: #002FA7;
+            --footer-bg: #F8F9FC;
+            --footer-text: #8888A0;
+            --ripple-color: rgba(0, 47, 167, 0.45);
+            --transition-speed: 180ms;
+            --ease-out: cubic-bezier(0.22, 0.61, 0.36, 1);
+            --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+            --font-stack: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+            --radius-sm: 8px;
+            --radius-md: 14px;
+            --radius-lg: 22px;
+            --radius-xl: 32px;
+            --touch-target: 44px;
+        }
+
+        [data-theme="dark"] {
+            --primary: #3B6CFF;
+            --primary-light: #5A85FF;
+            --primary-glow: rgba(59, 108, 255, 0.4);
+            --bg: #0A0A14;
+            --bg-secondary: #10101E;
+            --text: #E8E8F0;
+            --text-secondary: #B0B0C8;
+            --text-muted: #707090;
+            --border: #222238;
+            --card-bg: #141428;
+            --card-shadow: 0 2px 16px rgba(0, 0, 0, 0.3);
+            --card-shadow-hover: 0 10px 32px rgba(0, 0, 0, 0.45);
+            --nav-bg: rgba(10, 10, 20, 0.85);
+            --nav-border: rgba(59, 108, 255, 0.15);
+            --timeline-line: #2A2A48;
+            --badge-bg: rgba(59, 108, 255, 0.15);
+            --badge-text: #5A85FF;
+            --input-bg: #1A1A30;
+            --code-bg: #1A1A30;
+            --scrollbar-thumb: #3A3A58;
+            --tab-inactive: #1A1A30;
+            --tab-active: #3B6CFF;
+            --tab-text-inactive: #B0B0C8;
+            --tab-text-active: #FFFFFF;
+            --progress-bg: #222240;
+            --progress-fill: #3B6CFF;
+            --footer-bg: #0E0E1A;
+            --footer-text: #707090;
+            --ripple-color: rgba(59, 108, 255, 0.5);
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            -webkit-text-size-adjust: 100%;
+        }
+
+        body {
+            font-family: var(--font-stack);
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            font-size: 15px;
+            transition: background var(--transition-speed) var(--ease-out), color var(--transition-speed) var(--ease-out);
+            overflow-x: hidden;
+            cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Cpath d='M4 28 L24 8 L14 2 L2 20 Z' fill='%23002FA7' opacity='0.85' stroke='%23FFFFFF' stroke-width='1.2'/%3E%3Cpath d='M18 6 L26 14' stroke='%23002FA7' stroke-width='2.5' stroke-linecap='round'/%3E%3Ccircle cx='26' cy='14' r='2.5' fill='%23FFFFFF' stroke='%23002FA7' stroke-width='1'/%3E%3C/svg%3E") 4 28, auto;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        a,
+        button,
+        input,
+        textarea,
+        select,
+        [role="tab"],
+        .tab-btn,
+        .badge,
+        .card,
+        .btn {
+            cursor: pointer;
+            touch-action: manipulation;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        ::-webkit-scrollbar {
+            width: 4px;
+            height: 4px;
+        }
+        ::-webkit-scrollbar-track {
+            background: var(--bg-secondary);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: var(--scrollbar-thumb);
+            border-radius: 2px;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+            background:
+                repeating-linear-gradient(90deg,
+                    transparent,
+                    transparent 60px,
+                    var(--border) 60px,
+                    var(--border) 60.5px),
+                repeating-linear-gradient(0deg,
+                    transparent,
+                    transparent 60px,
+                    var(--border) 60px,
+                    var(--border) 60.5px);
+            opacity: 0.35;
+            transition: opacity var(--transition-speed) var(--ease-out);
+        }
+        [data-theme="dark"] body::before {
+            opacity: 0.18;
+        }
+
+        /* ============ 导航栏 ============ */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: var(--nav-bg);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid var(--nav-border);
+            padding: 0 12px;
+            height: 56px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            transition: background var(--transition-speed) var(--ease-out), border-color var(--transition-speed) var(--ease-out), box-shadow var(--transition-speed) var(--ease-out);
+            will-change: transform;
+        }
+        .navbar.scrolled {
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
+        }
+        .nav-brand {
+            font-weight: 700;
+            font-size: 1.05rem;
+            color: var(--primary);
+            letter-spacing: -0.02em;
+            white-space: nowrap;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            min-height: var(--touch-target);
+        }
+        .nav-brand .dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--primary);
+            display: inline-block;
+            animation: pulse-dot 2.5s var(--ease-in-out) infinite;
+        }
+        @keyframes pulse-dot {
+            0%,
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+            50% {
+                transform: scale(1.5);
+                opacity: 0.6;
+            }
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2px;
+            align-items: center;
+            list-style: none;
+            flex-wrap: nowrap;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-secondary);
+            font-size: 0.8rem;
+            padding: 10px 12px;
+            border-radius: var(--radius-sm);
+            transition: color var(--transition-speed) var(--ease-out), background var(--transition-speed) var(--ease-out);
+            white-space: nowrap;
+            font-weight: 500;
+            min-height: var(--touch-target);
+            display: inline-flex;
+            align-items: center;
+        }
+        .nav-links a:hover,
+        .nav-links a:focus-visible {
+            color: var(--primary);
+            background: var(--badge-bg);
+            outline: none;
+        }
+        .nav-links a.active {
+            color: var(--primary);
+            background: var(--badge-bg);
+        }
+
+        .nav-actions {
+            display: flex;
+            gap: 4px;
+            align-items: center;
+            flex-shrink: 0;
+        }
+        .icon-btn {
+            width: var(--touch-target);
+            height: var(--touch-target);
+            border-radius: 50%;
+            border: 1px solid var(--border);
+            background: transparent;
+            color: var(--text-secondary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            transition: all var(--transition-speed) var(--ease-out);
+            text-decoration: none;
+        }
+        .icon-btn:hover,
+        .icon-btn:focus-visible {
+            background: var(--badge-bg);
+            color: var(--primary);
+            border-color: var(--primary);
+            outline: none;
+            transform: translateY(-1px);
+        }
+
+        .hamburger {
+            display: none;
+            width: var(--touch-target);
+            height: var(--touch-target);
+            border-radius: 50%;
+            border: 1px solid var(--border);
+            background: transparent;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 4px;
+            cursor: pointer;
+            transition: all var(--transition-speed) var(--ease-out);
+        }
+        .hamburger span {
+            width: 16px;
+            height: 2px;
+            background: var(--text-secondary);
+            border-radius: 1px;
+            transition: all var(--transition-speed) var(--ease-out);
+        }
+        .hamburger.open span:nth-child(1) {
+            transform: translateY(6px) rotate(45deg);
+        }
+        .hamburger.open span:nth-child(2) {
+            opacity: 0;
+            transform: scaleX(0);
+        }
+        .hamburger.open span:nth-child(3) {
+            transform: translateY(-6px) rotate(-45deg);
+        }
+
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 56px;
+            left: 0;
+            right: 0;
+            background: var(--nav-bg);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid var(--nav-border);
+            padding: 8px 12px;
+            z-index: 999;
+            flex-direction: column;
+            gap: 2px;
+            transition: all var(--transition-speed) var(--ease-out);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+            max-height: calc(100vh - 56px);
+            overflow-y: auto;
+        }
+        .mobile-menu.open {
+            display: flex;
+        }
+        .mobile-menu a {
+            text-decoration: none;
+            color: var(--text-secondary);
+            padding: 14px 16px;
+            border-radius: var(--radius-sm);
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: all var(--transition-speed) var(--ease-out);
+            display: block;
+            min-height: var(--touch-target);
+        }
+        .mobile-menu a:hover {
+            background: var(--badge-bg);
+            color: var(--primary);
+        }
+
+        /* ============ 主容器 ============ */
+        .main {
+            max-width: 1080px;
+            margin: 0 auto;
+            padding: 72px 16px 40px;
+            position: relative;
+            flex: 1;
+            width: 100%;
+        }
+
+        /* ============ Hero 区域 ============ */
+        .hero {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 24px 8px 40px;
+            position: relative;
+        }
+        .hero-avatar {
+            width: 88px;
+            height: 88px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 16px;
+            box-shadow: 0 8px 30px var(--primary-glow);
+            position: relative;
+            letter-spacing: -0.04em;
+            user-select: none;
+            flex-shrink: 0;
+            object-fit: cover;
+            border: none;
+            line-height: 0;
+            will-change: transform;
+        }
+        .hero-avatar::after {
+            content: '';
+            position: absolute;
+            inset: -3px;
+            border-radius: 50%;
+            border: 2px solid var(--primary);
+            opacity: 0.3;
+            animation: avatar-ring 3s var(--ease-in-out) infinite;
+            pointer-events: none;
+        }
+        @keyframes avatar-ring {
+            0%,
+            100% {
+                transform: scale(1);
+                opacity: 0.3;
+            }
+            50% {
+                transform: scale(1.12);
+                opacity: 0.1;
+            }
+        }
+
+        .hero h1 {
+            font-size: clamp(1.8rem, 6vw, 2.6rem);
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            color: var(--text);
+            margin-bottom: 4px;
+            line-height: 1.2;
+        }
+        .hero .subtitle {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            margin-bottom: 16px;
+            font-weight: 400;
+            letter-spacing: 0.02em;
+        }
+        .hero .bio {
+            max-width: 560px;
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            margin-bottom: 24px;
+            line-height: 1.8;
+            letter-spacing: 0.01em;
+        }
+        .hero .bio strong {
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        .badge-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            justify-content: center;
+            margin-bottom: 24px;
+        }
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            padding: 6px 12px;
+            border-radius: 999px;
+            background: var(--badge-bg);
+            color: var(--badge-text);
+            font-size: 0.72rem;
+            font-weight: 600;
+            letter-spacing: 0.02em;
+            border: 1px solid transparent;
+            transition: all var(--transition-speed) var(--ease-out);
+            user-select: none;
+            white-space: nowrap;
+            min-height: 36px;
+        }
+        .badge:hover {
+            border-color: var(--primary);
+            transform: translateY(-1px);
+        }
+
+        .hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            justify-content: center;
+        }
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            padding: 12px 20px;
+            border-radius: 999px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-decoration: none;
+            border: 1.5px solid transparent;
+            transition: all var(--transition-speed) var(--ease-out);
+            letter-spacing: 0.01em;
+            white-space: nowrap;
+            min-height: var(--touch-target);
+            min-width: 44px;
+        }
+        .btn-primary {
+            background: var(--primary);
+            color: #fff;
+            border-color: var(--primary);
+            box-shadow: 0 4px 16px var(--primary-glow);
+        }
+        .btn-primary:hover,
+        .btn-primary:focus-visible {
+            background: var(--primary-light);
+            border-color: var(--primary-light);
+            box-shadow: 0 6px 24px var(--primary-glow);
+            transform: translateY(-2px);
+            outline: none;
+        }
+        .btn-outline {
+            background: transparent;
+            color: var(--text-secondary);
+            border-color: var(--border);
+        }
+        .btn-outline:hover,
+        .btn-outline:focus-visible {
+            border-color: var(--primary);
+            color: var(--primary);
+            background: var(--badge-bg);
+            transform: translateY(-2px);
+            outline: none;
+        }
+        .btn-sm {
+            padding: 10px 16px;
+            font-size: 0.78rem;
+            gap: 4px;
+        }
+        .btn-copy {
+            background: transparent;
+            color: var(--text-secondary);
+            border-color: var(--border);
+        }
+        .btn-copy:hover,
+        .btn-copy:focus-visible {
+            border-color: var(--primary);
+            color: var(--primary);
+            background: var(--badge-bg);
+            outline: none;
+        }
+        .btn-copy.copied {
+            border-color: #22C55E;
+            color: #22C55E;
+            background: rgba(34, 197, 94, 0.08);
+        }
+
+        /* ============ 通用区块 ============ */
+        .section {
+            margin-bottom: 44px;
+            scroll-margin-top: 72px;
+        }
+        .section-header {
+            margin-bottom: 20px;
+        }
+        .section-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            color: var(--text);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 4px;
+        }
+        .section-title .icon {
+            font-size: 1.1rem;
+            color: var(--primary);
+        }
+        .section-divider {
+            width: 40px;
+            height: 3px;
+            border-radius: 2px;
+            background: var(--primary);
+            margin-top: 4px;
+            opacity: 0.7;
+        }
+        .section-subtitle {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-top: 4px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            padding: 20px;
+            box-shadow: var(--card-shadow);
+            transition: all var(--transition-speed) var(--ease-out);
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 12px;
+        }
+        .card:hover {
+            box-shadow: var(--card-shadow-hover);
+            transform: translateY(-2px);
+            border-color: rgba(0, 47, 167, 0.2);
+        }
+        [data-theme="dark"] .card:hover {
+            border-color: rgba(59, 108, 255, 0.3);
+        }
+
+        .highlights-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 12px;
+        }
+        .highlight-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            padding: 16px 18px;
+            box-shadow: var(--card-shadow);
+            transition: all var(--transition-speed) var(--ease-out);
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+        .highlight-card:hover {
+            box-shadow: var(--card-shadow-hover);
+            transform: translateY(-2px);
+            border-color: rgba(0, 47, 167, 0.2);
+        }
+        .highlight-card .hl-icon {
+            font-size: 1.2rem;
+            color: var(--primary);
+            line-height: 1;
+        }
+        .highlight-card .hl-title {
+            font-weight: 650;
+            font-size: 0.9rem;
+            color: var(--text);
+            letter-spacing: -0.01em;
+        }
+        .highlight-card .hl-desc {
+            font-size: 0.78rem;
+            color: var(--text-secondary);
+            line-height: 1.65;
+        }
+        .highlight-card .hl-meta {
+            font-size: 0.7rem;
+            color: var(--text-muted);
+            letter-spacing: 0.02em;
+            margin-top: auto;
+        }
+
+        .tabs-container {
+            width: 100%;
+        }
+        .tab-list {
+            display: flex;
+            gap: 2px;
+            border-bottom: 2px solid var(--border);
+            margin-bottom: 16px;
+            overflow-x: auto;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+            flex-shrink: 0;
+            -webkit-overflow-scrolling: touch;
+        }
+        .tab-list::-webkit-scrollbar {
+            display: none;
+        }
+        .tab-btn {
+            padding: 12px 16px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            background: var(--tab-inactive);
+            color: var(--tab-text-inactive);
+            border: none;
+            border-radius: var(--radius-sm) var(--radius-sm) 0 0;
+            cursor: pointer;
+            transition: all var(--transition-speed) var(--ease-out);
+            white-space: nowrap;
+            letter-spacing: 0.02em;
+            position: relative;
+            flex-shrink: 0;
+            min-height: var(--touch-target);
+            min-width: 60px;
+        }
+        .tab-btn:hover {
+            color: var(--primary);
+            background: var(--badge-bg);
+        }
+        .tab-btn[aria-selected="true"] {
+            background: var(--tab-active);
+            color: var(--tab-text-active);
+        }
+        .tab-btn:focus-visible {
+            outline: 2px solid var(--primary);
+            outline-offset: -2px;
+        }
+        .tab-panel {
+            display: none;
+            animation: fadeIn 200ms var(--ease-out);
+        }
+        .tab-panel.active {
+            display: block;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(6px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .timeline {
+            position: relative;
+            padding-left: 24px;
+        }
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 4px;
+            top: 4px;
+            bottom: 4px;
+            width: 2px;
+            background: var(--timeline-line);
+            border-radius: 1px;
+        }
+        .timeline-item {
+            position: relative;
+            margin-bottom: 16px;
+            padding-left: 4px;
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -20px;
+            top: 5px;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--primary);
+            box-shadow: 0 0 0 3px var(--badge-bg);
+            transition: all var(--transition-speed) var(--ease-out);
+        }
+        .timeline-item:hover::before {
+            transform: scale(1.25);
+            box-shadow: 0 0 0 5px var(--badge-bg);
+        }
+        .timeline-item .tl-title {
+            font-weight: 650;
+            font-size: 0.9rem;
+            color: var(--text);
+            letter-spacing: -0.01em;
+        }
+        .timeline-item .tl-org {
+            font-size: 0.78rem;
+            color: var(--primary);
+            font-weight: 500;
+        }
+        .timeline-item .tl-time {
+            font-size: 0.7rem;
+            color: var(--text-muted);
+        }
+        .timeline-item .tl-desc {
+            font-size: 0.78rem;
+            color: var(--text-secondary);
+            margin-top: 4px;
+            line-height: 1.65;
+        }
+        .timeline-item .tl-desc ul {
+            list-style: none;
+            padding-left: 0;
+            margin-top: 4px;
+        }
+        .timeline-item .tl-desc li {
+            position: relative;
+            padding-left: 14px;
+            margin-bottom: 2px;
+        }
+        .timeline-item .tl-desc li::before {
+            content: '›';
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 12px;
+        }
+        .skill-group {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            padding: 16px 18px;
+            box-shadow: var(--card-shadow);
+            transition: all var(--transition-speed) var(--ease-out);
+        }
+        .skill-group:hover {
+            box-shadow: var(--card-shadow-hover);
+            transform: translateY(-2px);
+        }
+        .skill-group .sg-title {
+            font-weight: 650;
+            font-size: 0.85rem;
+            color: var(--primary);
+            margin-bottom: 10px;
+            letter-spacing: -0.01em;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .skill-item {
+            margin-bottom: 8px;
+        }
+        .skill-item:last-child {
+            margin-bottom: 0;
+        }
+        .skill-item .si-label {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            margin-bottom: 3px;
+        }
+        .skill-item .si-label span:last-child {
+            color: var(--text-muted);
+            font-size: 0.68rem;
+        }
+        .progress-bar {
+            height: 4px;
+            border-radius: 3px;
+            background: var(--progress-bg);
+            overflow: hidden;
+            position: relative;
+        }
+        .progress-bar .fill {
+            height: 100%;
+            border-radius: 3px;
+            background: linear-gradient(90deg, var(--primary), var(--primary-light));
+            transition: width 600ms var(--ease-out);
+            position: relative;
+            overflow: hidden;
+        }
+        .progress-bar .fill::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            animation: shimmer 2s infinite;
+        }
+        @keyframes shimmer {
+            0% {
+                transform: translateX(-100%);
+            }
+            100% {
+                transform: translateX(100%);
+            }
+        }
+
+        .tag-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 4px;
+            margin-top: 6px;
+        }
+        .tag {
+            font-size: 0.68rem;
+            padding: 5px 10px;
+            border-radius: 999px;
+            background: var(--badge-bg);
+            color: var(--badge-text);
+            font-weight: 500;
+            letter-spacing: 0.02em;
+            transition: all var(--transition-speed) var(--ease-out);
+            min-height: 32px;
+            display: inline-flex;
+            align-items: center;
+        }
+        .tag:hover {
+            background: var(--primary);
+            color: #fff;
+            transform: translateY(-1px);
+        }
+
+        .edu-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 12px;
+        }
+        .edu-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            padding: 16px 18px;
+            box-shadow: var(--card-shadow);
+            transition: all var(--transition-speed) var(--ease-out);
+        }
+        .edu-card:hover {
+            box-shadow: var(--card-shadow-hover);
+            transform: translateY(-2px);
+        }
+        .edu-card .ec-school {
+            font-weight: 700;
+            font-size: 0.9rem;
+            color: var(--text);
+            letter-spacing: -0.01em;
+        }
+        .edu-card .ec-major {
+            font-size: 0.8rem;
+            color: var(--primary);
+            font-weight: 500;
+        }
+        .edu-card .ec-time {
+            font-size: 0.7rem;
+            color: var(--text-muted);
+            margin-bottom: 6px;
+        }
+        .edu-card .ec-detail {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            line-height: 1.65;
+        }
+        .edu-card .ec-detail ul {
+            list-style: none;
+            padding-left: 0;
+            margin-top: 4px;
+        }
+        .edu-card .ec-detail li {
+            position: relative;
+            padding-left: 14px;
+            margin-bottom: 2px;
+            font-size: 0.72rem;
+        }
+        .edu-card .ec-detail li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+        }
+        .cert-img {
+            max-width: 100%;
+            border-radius: var(--radius-sm);
+            margin-top: 10px;
+            border: 1px solid var(--border);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+            cursor: zoom-in;
+            transition: transform var(--transition-speed) var(--ease-out);
+            height: auto;
+        }
+        .cert-img:hover {
+            transform: scale(1.02);
+        }
+
+        .qr-section {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 8px;
+        }
+        .qr-placeholder {
+            width: 90px;
+            height: 90px;
+            border-radius: var(--radius-sm);
+            border: 2px solid var(--border);
+            background: var(--card-bg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+        .qr-placeholder svg {
+            width: 80px;
+            height: 80px;
+            opacity: 0.7;
+        }
+        .qr-info {
+            text-align: left;
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            max-width: 200px;
+        }
+        .qr-info .qr-title {
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 2px;
+        }
+        .qr-info .qr-hint {
+            font-size: 0.68rem;
+            color: var(--text-muted);
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: var(--primary);
+            color: #fff;
+            border: none;
+            box-shadow: 0 4px 16px var(--primary-glow);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            cursor: pointer;
+            opacity: 0;
+            pointer-events: none;
+            transform: translateY(12px);
+            transition: all 250ms var(--ease-out);
+            z-index: 900;
+            will-change: transform, opacity;
+        }
+        .back-to-top.visible {
+            opacity: 1;
+            pointer-events: auto;
+            transform: translateY(0);
+        }
+        .back-to-top:hover {
+            background: var(--primary-light);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 24px var(--primary-glow);
+        }
+        .back-to-top:focus-visible {
+            outline: 2px solid var(--primary);
+            outline-offset: 2px;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 20px 16px;
+            border-top: 1px solid var(--border);
+            background: var(--footer-bg);
+            font-size: 0.72rem;
+            color: var(--footer-text);
+            letter-spacing: 0.02em;
+            transition: background var(--transition-speed) var(--ease-out), border-color var(--transition-speed) var(--ease-out);
+        }
+        .footer a {
+            color: var(--primary);
+            text-decoration: none;
+            transition: color var(--transition-speed) var(--ease-out);
+        }
+        .footer a:hover {
+            color: var(--primary-light);
+            text-decoration: underline;
+        }
+
+        .ripple {
+            position: fixed;
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 9999;
+            border: 2px solid var(--ripple-color);
+            background: radial-gradient(circle, var(--ripple-color) 0%, transparent 70%);
+            animation: ripple-expand 1.8s var(--ease-out) forwards;
+            will-change: transform, opacity;
+        }
+        @keyframes ripple-expand {
+            0% {
+                transform: scale(0) translateZ(0);
+                opacity: 0.9;
+            }
+            30% {
+                opacity: 0.7;
+            }
+            100% {
+                transform: scale(1) translateZ(0);
+                opacity: 0;
+            }
+        }
+
+        /* ============ 平板及以上 ============ */
+        @media (min-width: 600px) {
+            .highlights-grid,
+            .skills-grid,
+            .edu-grid {
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            }
+            .hero {
+                padding: 32px 16px 48px;
+            }
+            .hero-avatar {
+                width: 96px;
+                height: 96px;
+                font-size: 2.2rem;
+            }
+            .main {
+                padding: 80px 20px 60px;
+            }
+            .section {
+                margin-bottom: 56px;
+            }
+            .section-title {
+                font-size: 1.45rem;
+            }
+            .navbar {
+                padding: 0 24px;
+            }
+            .nav-links a {
+                padding: 6px 12px;
+                font-size: 0.85rem;
+            }
+            .icon-btn {
+                width: 40px;
+                height: 40px;
+            }
+        }
+
+        @media (min-width: 900px) {
+            .hamburger {
+                display: none !important;
+            }
+            .mobile-menu {
+                display: none !important;
+            }
+            .nav-links {
+                display: flex;
+            }
+        }
+
+        @media (max-width: 899px) {
+            .nav-links {
+                display: none;
+            }
+            .hamburger {
+                display: flex;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+            .ripple {
+                display: none !important;
+            }
+            .progress-bar .fill::after {
+                animation: none !important;
+            }
+            .hero-avatar::after {
+                animation: none !important;
+            }
+            .nav-brand .dot {
+                animation: none !important;
+            }
+            html {
+                scroll-behavior: auto;
+            }
+        }
+
+        @media print {
+            body {
+                background: #fff;
+                color: #000;
+                font-size: 12px;
+                line-height: 1.5;
+                cursor: auto;
+            }
+            body::before {
+                display: none !important;
+            }
+            .navbar,
+            .back-to-top,
+            .mobile-menu,
+            .hamburger,
+            .icon-btn,
+            .btn-print-hide,
+            .ripple,
+            .qr-section,
+            .hero-actions .btn-outline,
+            .btn-copy {
+                display: none !important;
+            }
+            .main {
+                padding: 20px 0;
+                max-width: 100%;
+            }
+            .hero {
+                padding: 20px 0;
+                text-align: left;
+                align-items: flex-start;
+            }
+            .hero-avatar {
+                width: 60px;
+                height: 60px;
+                font-size: 1.4rem;
+                margin-bottom: 10px;
+                box-shadow: none;
+                animation: none;
+            }
+            .hero-avatar::after {
+                display: none;
+            }
+            .card,
+            .highlight-card,
+            .skill-group,
+            .edu-card {
+                box-shadow: none !important;
+                border: 1px solid #ddd;
+                page-break-inside: avoid;
+                break-inside: avoid;
+            }
+            .card:hover,
+            .highlight-card:hover,
+            .skill-group:hover,
+            .edu-card:hover {
+                transform: none;
+                box-shadow: none;
+            }
+            .tab-list {
+                display: none !important;
+            }
+            .tab-panel {
+                display: block !important;
+                animation: none !important;
+                margin-bottom: 16px;
+            }
+            .section {
+                margin-bottom: 24px;
+            }
+            .progress-bar .fill {
+                transition: none !important;
+                background: #002FA7;
+            }
+            .progress-bar .fill::after {
+                display: none;
+            }
+            .section-divider {
+                background: #002FA7;
+            }
+            a {
+                color: #002FA7;
+            }
+            .footer {
+                border-top: 1px solid #ddd;
+                background: #fff;
+                color: #666;
+            }
+            .timeline-item::before {
+                box-shadow: none;
+                background: #002FA7;
+            }
+            .cert-img {
+                max-width: 100%;
+                page-break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar" id="navbar" role="navigation" aria-label="主导航">
+        <a href="#hero" class="nav-brand" aria-label="回到首页">
+            <span class="dot"></span>
+            <span id="navBrandName">胡毅豪</span>
+        </a>
+        <ul class="nav-links" id="navLinks" role="list"></ul>
+        <div class="nav-actions">
+            <button class="icon-btn" id="themeToggle" aria-label="切换深色/浅色模式" title="切换深浅色">
+                <span id="themeIcon">🌙</span>
+            </button>
+            <button class="icon-btn" id="printBtn" aria-label="打印简历" title="打印 / 导出PDF">
+                <span>🖨️</span>
+            </button>
+            <button class="hamburger" id="hamburgerBtn" aria-label="打开菜单" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <div class="mobile-menu" id="mobileMenu" role="navigation" aria-label="移动端导航"></div>
+
+    <main class="main" id="mainContent"></main>
+
+    <button class="back-to-top" id="backToTop" aria-label="返回顶部" title="返回顶部">↑</button>
+
+    <footer class="footer" id="footer">
+        <p id="footerContent"></p>
+    </footer>
+
+    <script>
+        (function() {
+            const resume = {
+                name: '胡毅豪',
+                phone: '198-7045-1841',
+                email: '3624319453@qq.com',
+                qq: '362431945',
+                title: '美术学（师范类）本科生 · AI应用探索者',
+                bio: '岭南师范学院美术学（师范类）在读，<strong>深耕AI大模型与教育融合</strong>，擅长利用DeepSeek、ChatGPT等工具进行全流程内容创作——从网页搭建到课件设计，从短剧脚本到互动游戏。持有<strong>阿里云&达摩院人工智能训练师认证</strong>，致力于将AI能力转化为教学表现力与学习兴趣的催化剂。',
+                keywords: ['AI提示词工程', '数字内容创作', 'AI辅助设计', '师范教学', 'Figma/Canva', '低代码开发'],
+                avatar: 'hyh.jpg',
+                education: {
+                    school: '岭南师范学院',
+                    major: '美术学（师范类）',
+                    degree: '本科',
+                    location: '广东湛江',
+                    time: '2026.09 - 2030.06（预计）',
+                    courses: ['美术教育学', '数字媒体艺术', '设计基础', '教育心理学', '现代教育技术'],
+                    gpa: null,
+                    rank: null
+                },
+                highlights: [
+                    { icon: '🏅', title: '人工智能训练师认证',
+                        desc: '阿里云智能服务事业部 & 达摩院-机器智能技术事业部联合认证，证书编号 AIT260831113339000148。',
+                        meta: '2026.08.31' },
+                    { icon: '🧠', title: 'AI全流程内容创作',
+                        desc: '精通DeepSeek、ChatGPT提示词工程与任务拆解，可独立完成网页、PPT、短剧脚本、互动小游戏的全流程AI生成。',
+                        meta: '核心能力' },
+                    { icon: '🎓', title: 'AI+师范教学设计',
+                        desc: '具备师范生教学设计与课堂组织能力，能将AI工具深度融入课件、课堂互动与内容可视化。',
+                        meta: '教学方向' },
+                    { icon: '⚡', title: '快速建站与部署',
+                        desc: '熟练使用Dora、Framer等AI辅助建站平台搭建响应式网页，了解低代码小游戏开发与部署流程。',
+                        meta: '开发能力' }
+                ],
+                experience: {
+                    tabs: [
+                        { id: 'exp-work', label: '工作经历', items: [] },
+                        { id: 'exp-intern', label: '实习经历', items: [{ name: '厉兵秣马', org: '待补充详细信息',
+                                time: '待补充', desc: '该经历的具体职责与成果将在后续更新中补充。' }] },
+                        { id: 'exp-campus', label: '校园经历', items: [] }
+                    ]
+                },
+                projects: {
+                    tabs: [
+                        { id: 'proj-ai', label: 'AI 项目', items: [] },
+                        { id: 'proj-design', label: '设计作品', items: [] },
+                        { id: 'proj-teach', label: '教学实践', items: [] }
+                    ]
+                },
+                skills: [
+                    { group: 'AI 大模型与工具', icon: '🤖', items: [{ name: 'DeepSeek / ChatGPT 提示词工程',
+                            level: 92 }, { name: '任务拆解与流程自动化', level: 88 },
+                        { name: 'AI 全流程内容生成', level: 90 }
+                        ], tags: ['提示词工程', '流程自动化', '内容生成'] },
+                    { group: '数字内容创作', icon: '🎨', items: [{ name: 'Figma / Canva 设计', level: 85 },
+                        { name: '剪映 视频剪辑', level: 82 }, { name: 'AI 短剧脚本与分镜', level: 80 }
+                        ], tags: ['Figma', 'Canva', '剪映', '短剧脚本'] },
+                    { group: '开发与设计', icon: '💻', items: [{ name: 'Dora / Framer 响应式建站', level: 78 },
+                        { name: 'HTML/CSS/JS 基础', level: 72 }, { name: '低代码小游戏开发', level: 65 }
+                        ], tags: ['Dora', 'Framer', '低代码', '响应式'] },
+                    { group: '教学与沟通', icon: '📚', items: [{ name: '教学设计', level: 88 },
+                        { name: '课堂互动组织', level: 85 }, { name: 'AI 课件设计', level: 87 }
+                        ], tags: ['教学设计', '课堂组织', 'AI课件'] }
+                ],
+                certificates: [
+                    { name: '人工智能训练师证书', issuer: '阿里云智能服务事业部 & 达摩院-机器智能技术事业部',
+                        time: '2026.08.31', certId: 'AIT260831113339000148', img: 'rgzn.jpg' }
+                ]
+            };
+
+            function el(tag, attrs = {}, children = []) {
+                const node = document.createElement(tag);
+                for (const [k, v] of Object.entries(attrs)) {
+                    if (k === 'class') node.className = v;
+                    else if (k === 'dataset') { for (const [dk, dv] of Object.entries(v)) node.dataset[dk] = dv; } else if (
+                        k.startsWith('on') && typeof v === 'function') node.addEventListener(k.slice(2).toLowerCase(), v);
+                    else if (k === 'html') node.innerHTML = v;
+                    else if (k === 'text') node.textContent = v;
+                    else if (v !== null && v !== undefined) node.setAttribute(k, v);
+                }
+                for (const child of children) {
+                    if (child) node.appendChild(child);
+                }
+                return node;
+            }
+
+            function clearNode(node) {
+                while (node.firstChild) node.removeChild(node.firstChild);
+            }
+
+            const THEME_KEY = 'hyh-theme';
+
+            function getPreferredTheme() {
+                const saved = localStorage.getItem(THEME_KEY);
+                if (saved === 'dark' || saved === 'light') return saved;
+                return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+            }
+
+            function applyTheme(theme) {
+                document.documentElement.setAttribute('data-theme', theme);
+                localStorage.setItem(THEME_KEY, theme);
+                const icon = document.getElementById('themeIcon');
+                if (icon) icon.textContent = theme === 'dark' ? '☀️' : '🌙';
+            }
+
+            const NAV_SECTIONS = [
+                { id: 'hero', label: '首页', icon: '🏠' },
+                { id: 'highlights', label: '亮点', icon: '✨' },
+                { id: 'experience', label: '经历', icon: '📋' },
+                { id: 'projects', label: '项目', icon: '🚀' },
+                { id: 'skills', label: '技能', icon: '💡' },
+                { id: 'education', label: '教育', icon: '🎓' },
+                { id: 'contact', label: '联系', icon: '📬' }
+            ];
+
+            function renderNav() {
+                const navLinks = document.getElementById('navLinks');
+                const mobileMenu = document.getElementById('mobileMenu');
+                clearNode(navLinks);
+                clearNode(mobileMenu);
+                NAV_SECTIONS.forEach(sec => {
+                    const desktopLink = el('a', { href: '#' + sec.id, text: sec.label, 'data-section': sec.id });
+                    const mobileLink = el('a', { href: '#' + sec.id, text: sec.icon + ' ' + sec.label,
+                        'data-section': sec.id });
+                    navLinks.appendChild(el('li', {}, [desktopLink]));
+                    mobileMenu.appendChild(mobileLink);
+                });
+            }
+
+            function renderHero() {
+                const main = document.getElementById('mainContent');
+                const hero = el('section', { class: 'hero', id: 'hero' });
+                const avatar = el('img', {
+                    class: 'hero-avatar',
+                    src: resume.avatar,
+                    alt: resume.name + '头像',
+                    title: resume.name,
+                    loading: 'lazy',
+                    decoding: 'async'
+                });
+                const h1 = el('h1', { text: resume.name });
+                const subtitle = el('p', { class: 'subtitle', text: resume.title });
+                const bio = el('p', { class: 'bio', html: resume.bio });
+                const badgeRow = el('div', { class: 'badge-row' });
+                resume.keywords.forEach(kw => badgeRow.appendChild(el('span', { class: 'badge', text: kw })));
+                const actions = el('div', { class: 'hero-actions' });
+                const mailBtn = el('a', { class: 'btn btn-primary', href: 'mailto:' + resume.email, html: '📧 联系我' });
+                const phoneBtn = el('a', { class: 'btn btn-outline', href: 'tel:' + resume.phone.replace(/-/g, ''),
+                    html: '📱 ' + resume.phone });
+                const copyEmailBtn = el('button', { class: 'btn btn-copy btn-sm', 'data-copy': resume.email,
+                    html: '📋 复制邮箱', 'aria-label': '复制邮箱地址' });
+                actions.append(mailBtn, phoneBtn, copyEmailBtn);
+                hero.append(avatar, h1, subtitle, bio, badgeRow, actions);
+                main.appendChild(hero);
+
+                copyEmailBtn.addEventListener('click', async function() {
+                    const email = this.dataset.copy;
+                    try {
+                        await navigator.clipboard.writeText(email);
+                        this.classList.add('copied');
+                        this.innerHTML = '✅ 已复制';
+                        setTimeout(() => { this.classList.remove('copied');
+                            this.innerHTML = '📋 复制邮箱'; }, 2000);
+                    } catch {
+                        const ta = document.createElement('textarea');
+                        ta.value = email;
+                        document.body.appendChild(ta);
+                        ta.select();
+                        document.execCommand('copy');
+                        ta.remove();
+                        this.classList.add('copied');
+                        this.innerHTML = '✅ 已复制';
+                        setTimeout(() => { this.classList.remove('copied');
+                            this.innerHTML = '📋 复制邮箱'; }, 2000);
+                    }
+                });
+            }
+
+            function renderHighlights() {
+                const main = document.getElementById('mainContent');
+                const section = el('section', { class: 'section', id: 'highlights' });
+                const header = el('div', { class: 'section-header' });
+                header.appendChild(el('h2', { class: 'section-title', html: '<span class="icon">✨</span> 亮点成果' }));
+                header.appendChild(el('div', { class: 'section-divider' }));
+                header.appendChild(el('p', { class: 'section-subtitle', text: '核心优势与可量化成绩' }));
+                section.appendChild(header);
+                const grid = el('div', { class: 'highlights-grid' });
+                resume.highlights.forEach(hl => {
+                    const card = el('div', { class: 'highlight-card' });
+                    card.appendChild(el('div', { class: 'hl-icon', text: hl.icon }));
+                    card.appendChild(el('div', { class: 'hl-title', text: hl.title }));
+                    card.appendChild(el('div', { class: 'hl-desc', text: hl.desc }));
+                    if (hl.meta) card.appendChild(el('div', { class: 'hl-meta', text: hl.meta }));
+                    grid.appendChild(card);
+                });
+                section.appendChild(grid);
+                main.appendChild(section);
+            }
+
+            function renderTabsSection(sectionId, title, icon, tabData, emptyMessage) {
+                const main = document.getElementById('mainContent');
+                const section = el('section', { class: 'section', id: sectionId });
+                const header = el('div', { class: 'section-header' });
+                header.appendChild(el('h2', { class: 'section-title', html: '<span class="icon">' + icon + '</span> ' +
+                    title }));
+                header.appendChild(el('div', { class: 'section-divider' }));
+                section.appendChild(header);
+                const tabsContainer = el('div', { class: 'tabs-container' });
+                const tabList = el('div', { class: 'tab-list', role: 'tablist', 'aria-label': title + '标签页' });
+                const panelsContainer = el('div', { class: 'tab-panels' });
+                let hasContent = false;
+                tabData.forEach(tab => { if (tab.items && tab.items.length > 0) hasContent = true; });
+                if (!hasContent) {
+                    const emptyCard = el('div', { class: 'card', html: '<p style="color:var(--text-muted);font-size:0.9rem;text-align:center;padding:20px 0;">' +
+                            (emptyMessage || '暂无内容，持续更新中…') + '</p>' });
+                    section.appendChild(emptyCard);
+                    main.appendChild(section);
+                    return;
+                }
+                tabData.forEach((tab, idx) => {
+                    const btn = el('button', { class: 'tab-btn', role: 'tab', id: tab.id + '-tab',
+                        'aria-controls': tab.id + '-panel', 'aria-selected': idx === 0 ? 'true' : 'false',
+                        tabindex: idx === 0 ? '0' : '-1', text: tab.label, 'data-tab': tab.id });
+                    tabList.appendChild(btn);
+                    const panel = el('div', { class: 'tab-panel' + (idx === 0 ? ' active' : ''), role: 'tabpanel',
+                        id: tab.id + '-panel', 'aria-labelledby': tab.id + '-tab', tabindex: '0' });
+                    if (tab.items && tab.items.length > 0) {
+                        const timeline = el('div', { class: 'timeline' });
+                        tab.items.forEach(item => {
+                            const ti = el('div', { class: 'timeline-item' });
+                            ti.appendChild(el('div', { class: 'tl-title', text: item.name || '' }));
+                            if (item.org) ti.appendChild(el('div', { class: 'tl-org', text: item.org }));
+                            if (item.time) ti.appendChild(el('div', { class: 'tl-time', text: item.time }));
+                            if (item.desc) {
+                                const descDiv = el('div', { class: 'tl-desc' });
+                                if (typeof item.desc === 'string') descDiv.textContent = item.desc;
+                                else if (Array.isArray(item.desc)) {
+                                    const ul = el('ul');
+                                    item.desc.forEach(d => ul.appendChild(el('li', { text: d })));
+                                    descDiv.appendChild(ul);
+                                }
+                                ti.appendChild(descDiv);
+                            }
+                            timeline.appendChild(ti);
+                        });
+                        panel.appendChild(timeline);
+                    } else {
+                        panel.appendChild(el('p', { class: 'tl-desc', text: '暂无内容，持续更新中…',
+                            style: 'color:var(--text-muted);' }));
+                    }
+                    panelsContainer.appendChild(panel);
+                });
+                tabsContainer.append(tabList, panelsContainer);
+                section.appendChild(tabsContainer);
+                main.appendChild(section);
+
+                const tabs = tabList.querySelectorAll('.tab-btn');
+                const panels = panelsContainer.querySelectorAll('.tab-panel');
+                let currentIdx = 0;
+
+                function activateTab(idx) {
+                    tabs.forEach((t, i) => {
+                        const isActive = i === idx;
+                        t.setAttribute('aria-selected', isActive ? 'true' : 'false');
+                        t.tabIndex = isActive ? '0' : '-1';
+                        panels[i].classList.toggle('active', isActive);
+                    });
+                    currentIdx = idx;
+                    tabs[idx].focus();
+                }
+                tabs.forEach((t, i) => {
+                    t.addEventListener('click', () => activateTab(i));
+                    t.addEventListener('keydown', (e) => {
+                        let nextIdx = null;
+                        if (e.key === 'ArrowRight') nextIdx = (currentIdx + 1) % tabs.length;
+                        else if (e.key === 'ArrowLeft') nextIdx = (currentIdx - 1 + tabs.length) % tabs.length;
+                        else if (e.key === 'Home') nextIdx = 0;
+                        else if (e.key === 'End') nextIdx = tabs.length - 1;
+                        if (nextIdx !== null) { e.preventDefault();
+                            activateTab(nextIdx); }
+                    });
+                });
+            }
+
+            function renderExperience() {
+                renderTabsSection('experience', '工作 / 实习经历', '📋', resume.experience.tabs,
+                    '详细经历正在整理中，敬请期待。');
+            }
+
+            function renderProjects() {
+                renderTabsSection('projects', '项目作品', '🚀', resume.projects.tabs,
+                    '项目经历正在整理中，敬请期待。');
+            }
+
+            function renderSkills() {
+                const main = document.getElementById('mainContent');
+                const section = el('section', { class: 'section', id: 'skills' });
+                const header = el('div', { class: 'section-header' });
+                header.appendChild(el('h2', { class: 'section-title', html: '<span class="icon">💡</span> 技能矩阵' }));
+                header.appendChild(el('div', { class: 'section-divider' }));
+                section.appendChild(header);
+                const grid = el('div', { class: 'skills-grid' });
+                resume.skills.forEach(group => {
+                    const card = el('div', { class: 'skill-group' });
+                    card.appendChild(el('div', { class: 'sg-title', html: group.icon + ' ' + group.group }));
+                    group.items.forEach(item => {
+                        const si = el('div', { class: 'skill-item' });
+                        const label = el('div', { class: 'si-label' });
+                        label.appendChild(el('span', { text: item.name }));
+                        label.appendChild(el('span', { text: item.level + '%' }));
+                        const bar = el('div', { class: 'progress-bar' });
+                        const fill = el('div', { class: 'fill', style: 'width:' + item.level + '%' });
+                        bar.appendChild(fill);
+                        si.append(label, bar);
+                        card.appendChild(si);
+                    });
+                    if (group.tags && group.tags.length > 0) {
+                        const tagRow = el('div', { class: 'tag-row' });
+                        group.tags.forEach(tag => tagRow.appendChild(el('span', { class: 'tag', text: tag })));
+                        card.appendChild(tagRow);
+                    }
+                    grid.appendChild(card);
+                });
+                section.appendChild(grid);
+                main.appendChild(section);
+            }
+
+            function renderEducation() {
+                const main = document.getElementById('mainContent');
+                const section = el('section', { class: 'section', id: 'education' });
+                const header = el('div', { class: 'section-header' });
+                header.appendChild(el('h2', { class: 'section-title', html: '<span class="icon">🎓</span> 教育与证书' }));
+                header.appendChild(el('div', { class: 'section-divider' }));
+                section.appendChild(header);
+                const grid = el('div', { class: 'edu-grid' });
+
+                const eduCard = el('div', { class: 'edu-card' });
+                eduCard.appendChild(el('div', { class: 'ec-school', text: resume.education.school }));
+                eduCard.appendChild(el('div', { class: 'ec-major', text: resume.education.major + ' · ' + resume
+                        .education.degree }));
+                eduCard.appendChild(el('div', { class: 'ec-time', text: resume.education.time + ' · ' + resume
+                        .education.location }));
+                const eduDetail = el('div', { class: 'ec-detail' });
+                eduDetail.appendChild(el('p', { text: '核心课程：' }));
+                const ul = el('ul');
+                resume.education.courses.forEach(c => ul.appendChild(el('li', { text: c })));
+                eduDetail.appendChild(ul);
+                if (resume.education.gpa) eduDetail.appendChild(el('p', { text: 'GPA：' + resume.education.gpa }));
+                else eduDetail.appendChild(el('p', { text: 'GPA：待公示', style: 'color:var(--text-muted);' }));
+                if (resume.education.rank) eduDetail.appendChild(el('p', { text: '年级排名：前 ' + resume.education
+                        .rank }));
+                else eduDetail.appendChild(el('p', { text: '年级排名：待公示', style: 'color:var(--text-muted);' }));
+                eduCard.appendChild(eduDetail);
+                grid.appendChild(eduCard);
+
+                resume.certificates.forEach(cert => {
+                    const certCard = el('div', { class: 'edu-card' });
+                    certCard.appendChild(el('div', { class: 'ec-school', text: cert.name }));
+                    certCard.appendChild(el('div', { class: 'ec-major', text: cert.issuer }));
+                    certCard.appendChild(el('div', { class: 'ec-time', text: '认证时间：' + cert.time }));
+                    const certDetail = el('div', { class: 'ec-detail' });
+                    certDetail.appendChild(el('p', { text: '证书编号：' + cert.certId,
+                        style: 'font-family:monospace;font-size:0.72rem;letter-spacing:0.02em;' }));
+                    if (cert.img) {
+                        const img = el('img', { class: 'cert-img', src: cert.img, alt: cert.name,
+                            title: '点击查看大图', loading: 'lazy', decoding: 'async' });
+                        img.addEventListener('click', () => window.open(cert.img, '_blank'));
+                        certDetail.appendChild(img);
+                    }
+                    certCard.appendChild(certDetail);
+                    grid.appendChild(certCard);
+                });
+
+                section.appendChild(grid);
+                main.appendChild(section);
+            }
+
+            function renderContact() {
+                const main = document.getElementById('mainContent');
+                const section = el('section', { class: 'section', id: 'contact' });
+                const header = el('div', { class: 'section-header' });
+                header.appendChild(el('h2', { class: 'section-title', html: '<span class="icon">📬</span> 联系方式' }));
+                header.appendChild(el('div', { class: 'section-divider' }));
+                section.appendChild(header);
+                const card = el('div', { class: 'card' });
+                const contactGrid = el('div', { style: 'display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between;' });
+                const infoDiv = el('div', { style: 'display:flex;flex-direction:column;gap:8px;flex:1;min-width:200px;' });
+                infoDiv.appendChild(el('p', { html: '📱 电话：<a href="tel:' + resume.phone.replace(/-/g, '') +
+                        '" style="color:var(--primary);text-decoration:none;">' + resume.phone + '</a>' }));
+                infoDiv.appendChild(el('p', { html: '📧 邮箱：<a href="mailto:' + resume.email +
+                        '" style="color:var(--primary);text-decoration:none;">' + resume.email + '</a>' }));
+                infoDiv.appendChild(el('p', { html: '💬 QQ：' + resume.qq }));
+                const qrDiv = el('div', { class: 'qr-section' });
+                const qrBox = el('div', { class: 'qr-placeholder' });
+                qrBox.appendChild(el('div', { html: '<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><rect width="100" height="100" fill="none" stroke="var(--border)" stroke-width="1.5" rx="4"/><rect x="10" y="10" width="24" height="24" fill="var(--primary)" opacity="0.85" rx="2"/><rect x="16" y="16" width="12" height="12" fill="var(--bg)"/><rect x="14" y="14" width="4" height="4" fill="var(--primary)"/><rect x="14" y="22" width="4" height="4" fill="var(--primary)"/><rect x="22" y="14" width="4" height="4" fill="var(--primary)"/><rect x="66" y="10" width="24" height="24" fill="var(--primary)" opacity="0.85" rx="2"/><rect x="72" y="16" width="12" height="12" fill="var(--bg)"/><rect x="70" y="14" width="4" height="4" fill="var(--primary)"/><rect x="70" y="22" width="4" height="4" fill="var(--primary)"/><rect x="78" y="14" width="4" height="4" fill="var(--primary)"/><rect x="10" y="66" width="24" height="24" fill="var(--primary)" opacity="0.85" rx="2"/><rect x="16" y="72" width="12" height="12" fill="var(--bg)"/><rect x="14" y="70" width="4" height="4" fill="var(--primary)"/><rect x="14" y="78" width="4" height="4" fill="var(--primary)"/><rect x="22" y="70" width="4" height="4" fill="var(--primary)"/><rect x="44" y="20" width="12" height="12" fill="var(--primary)" opacity="0.6" rx="1"/><rect x="60" y="20" width="8" height="8" fill="var(--primary)" opacity="0.7" rx="1"/><rect x="40" y="44" width="16" height="16" fill="var(--primary)" opacity="0.55" rx="1"/><rect x="60" y="44" width="10" height="10" fill="var(--primary)" opacity="0.6" rx="1"/><rect x="44" y="64" width="12" height="12" fill="var(--primary)" opacity="0.6" rx="1"/><rect x="60" y="64" width="8" height="8" fill="var(--primary)" opacity="0.7" rx="1"/><rect x="20" y="44" width="10" height="10" fill="var(--primary)" opacity="0.6" rx="1"/><rect x="34" y="44" width="6" height="6" fill="var(--primary)" opacity="0.5" rx="1"/><rect x="74" y="70" width="12" height="12" fill="var(--primary)" opacity="0.6" rx="1"/><rect x="74" y="84" width="8" height="8" fill="var(--primary)" opacity="0.5" rx="1"/><rect x="86" y="44" width="10" height="10" fill="var(--primary)" opacity="0.55" rx="1"/></svg>' }));
+                const qrInfo = el('div', { class: 'qr-info' });
+                qrInfo.appendChild(el('div', { class: 'qr-title', text: '扫码查看手机版' }));
+                qrInfo.appendChild(el('div', { class: 'qr-hint', text: '部署后替换为实际二维码' }));
+                qrDiv.append(qrBox, qrInfo);
+                contactGrid.append(infoDiv, qrDiv);
+                card.appendChild(contactGrid);
+                section.appendChild(card);
+                main.appendChild(section);
+            }
+
+            function renderFooter() {
+                document.getElementById('footerContent').innerHTML = '© ' + new Date().getFullYear() + ' ' + resume
+                    .name + ' · ' + resume.email + ' · 最后更新：' + new Date().toLocaleDateString('zh-CN');
+            }
+
+            function initRippleEffect() {
+                let activeRipples = 0;
+                const maxRipples = 10;
+                document.addEventListener('click', function(e) {
+                    if (e.target.closest('a, button, [role="tab"], .badge, .card, .btn')) return;
+                    if (activeRipples >= maxRipples) return;
+                    const size = 40 + Math.random() * 90;
+                    const x = e.clientX;
+                    const y = e.clientY;
+                    const ripple = document.createElement('div');
+                    ripple.className = 'ripple';
+                    ripple.style.width = size + 'px';
+                    ripple.style.height = size + 'px';
+                    ripple.style.left = (x - size / 2) + 'px';
+                    ripple.style.top = (y - size / 2) + 'px';
+                    const opacityVar = 0.35 + Math.random() * 0.35;
+                    ripple.style.borderColor = 'rgba(0,47,167,' + opacityVar + ')';
+                    ripple.style.background = 'radial-gradient(circle, rgba(0,47,167,' + (opacityVar * 0.7) +
+                        ') 0%, transparent 70%)';
+                    ripple.style.animationDuration = (1.2 + Math.random() * 1.0) + 's';
+                    document.body.appendChild(ripple);
+                    activeRipples++;
+                    ripple.addEventListener('animationend', () => { ripple.remove();
+                        activeRipples--; });
+                });
+            }
+
+            function initBackToTop() {
+                const btn = document.getElementById('backToTop');
+                const navbar = document.getElementById('navbar');
+                window.addEventListener('scroll', () => {
+                    const y = window.scrollY || window.pageYOffset;
+                    btn.classList.toggle('visible', y > 400);
+                    navbar.classList.toggle('scrolled', y > 30);
+                }, { passive: true });
+                btn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+            }
+
+            function initSmoothScroll() {
+                document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                    anchor.addEventListener('click', function(e) {
+                        const targetId = this.getAttribute('href');
+                        if (targetId === '#') return;
+                        const targetEl = document.querySelector(targetId);
+                        if (targetEl) {
+                            e.preventDefault();
+                            targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                            document.getElementById('mobileMenu').classList.remove('open');
+                            document.getElementById('hamburgerBtn').classList.remove('open');
+                            document.getElementById('hamburgerBtn').setAttribute('aria-expanded', 'false');
+                        }
+                    });
+                });
+            }
+
+            function initScrollSpy() {
+                const sections = NAV_SECTIONS.map(s => document.getElementById(s.id)).filter(Boolean);
+                const navLinks = document.querySelectorAll('.nav-links a');
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            navLinks.forEach(link => link.classList.toggle('active', link.dataset
+                                .section === entry.target.id));
+                        }
+                    });
+                }, { rootMargin: '-20% 0px -70% 0px', threshold: 0 });
+                sections.forEach(sec => observer.observe(sec));
+            }
+
+            function initHamburger() {
+                const btn = document.getElementById('hamburgerBtn');
+                const menu = document.getElementById('mobileMenu');
+                btn.addEventListener('click', () => {
+                    const isOpen = menu.classList.toggle('open');
+                    btn.classList.toggle('open', isOpen);
+                    btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+                    btn.setAttribute('aria-label', isOpen ? '关闭菜单' : '打开菜单');
+                });
+            }
+
+            function initPrint() {
+                document.getElementById('printBtn').addEventListener('click', () => window.print());
+            }
+
+            function initThemeToggle() {
+                document.getElementById('themeToggle').addEventListener('click', () => {
+                    const current = document.documentElement.getAttribute('data-theme') || 'light';
+                    applyTheme(current === 'dark' ? 'light' : 'dark');
+                });
+            }
+
+            function initFadeIn() {
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.style.opacity = '1';
+                            entry.target.style.transform = 'translateY(0)';
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
+                document.querySelectorAll('.section, .hero').forEach(sec => {
+                    sec.style.opacity = '0';
+                    sec.style.transform = 'translateY(14px)';
+                    sec.style.transition = 'opacity 250ms var(--ease-out), transform 250ms var(--ease-out)';
+                    observer.observe(sec);
+                });
+            }
+
+            function init() {
+                applyTheme(getPreferredTheme());
+                renderNav();
+                renderHero();
+                renderHighlights();
+                renderExperience();
+                renderProjects();
+                renderSkills();
+                renderEducation();
+                renderContact();
+                renderFooter();
+
+                initHamburger();
+                initThemeToggle();
+                initPrint();
+                initSmoothScroll();
+                initBackToTop();
+                initRippleEffect();
+                initScrollSpy();
+                requestAnimationFrame(initFadeIn);
+            }
+
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', init);
+            } else {
+                init();
+            }
+        })();
+    </script>
+</body>
+</html>
